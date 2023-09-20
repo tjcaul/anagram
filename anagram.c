@@ -17,12 +17,12 @@ void tolowers (char *s) {
 }
 
 int anagram (char *a, char *b) {
-	//printf("%s : %s\n", a, b);
+	if (strlen(a) != strlen(b))
+		return 0;
 	tolowers(a);
 	tolowers(b);
 	qsort(a, strlen(a), 1, cmp);
 	qsort(b, strlen(b), 1, cmp);
-	//printf("%s : %s\n\n", a, b);
 	return !strcmp(a, b);
 }
 
